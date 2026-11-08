@@ -1,0 +1,25 @@
+{
+  "name": "weixin-grok-forward",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Standalone before_dispatch plugin that forwards openclaw-weixin turns to a Grok bot webhook and returns reply-file text.",
+  "files": [
+    "src/",
+    "!src/**/*.test.ts",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "node ../../node_modules/vitest/vitest.mjs run --coverage=false",
+    "typecheck": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json --noEmit"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.8.1"
+  },
+  "openclaw": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  }
+}
