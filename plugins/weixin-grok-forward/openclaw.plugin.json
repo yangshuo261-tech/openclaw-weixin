@@ -1,0 +1,22 @@
+{
+  "id": "weixin-grok-forward",
+  "name": "Weixin Grok Forward",
+  "description": "Forwards openclaw-weixin turns to a Grok bot webhook and returns the reply file through before_dispatch.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "webhookUrl": { "type": "string", "minLength": 1 },
+      "webhookToken": { "type": "string", "minLength": 1 },
+      "stateDir": { "type": "string", "minLength": 1 },
+      "replyDir": { "type": "string", "minLength": 1 },
+      "timeoutMs": { "type": "number" },
+      "pollIntervalMs": { "type": "number" },
+      "channelId": { "type": "string", "minLength": 1 }
+    },
+    "required": ["webhookUrl", "webhookToken", "stateDir", "replyDir"]
+  }
+}
